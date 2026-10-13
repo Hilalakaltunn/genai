@@ -1,0 +1,13 @@
+# W-06 (negative): Enter in an empty composer must not start a conversation
+url: https://chatbotai.com
+name: 02 Empty message is not sent
+tags:
+  - negative
+---
+- runFlow: ../common/open_home.yaml
+- tapOn:
+    id: "chat-input-textarea"
+- pressKey: Enter
+- assertVisible: "No chat history"
+- assertVisible: "Welcome to chatbotai.com - your personal AI assistant"
+- takeScreenshot: screenshots/02_empty_message

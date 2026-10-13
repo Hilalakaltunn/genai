@@ -1,0 +1,27 @@
+# Navigation: main sidebar sections open (Image, Video, Apps) and
+# New Chat returns to the chat home
+url: https://chatbotai.com
+name: 06 Sidebar navigation
+tags:
+  - navigation
+---
+- runFlow: ../common/open_home.yaml
+- tapOn:
+    id: "chat-sidebar-nav-item-button-Image"
+- extendedWaitUntil:
+    visible: "What would you like to create?"
+    timeout: 10000
+- assertVisible:
+    id: "chat-input-image-add-button"
+- takeScreenshot: screenshots/06a_image
+- tapOn:
+    id: "chat-sidebar-nav-item-button-Video"
+- takeScreenshot: screenshots/06b_video
+- tapOn:
+    id: "chat-sidebar-nav-item-button-Apps"
+- takeScreenshot: screenshots/06c_apps
+- tapOn:
+    id: "chat-sidebar-nav-item-button-New Chat"
+- extendedWaitUntil:
+    visible: "Welcome to chatbotai.com - your personal AI assistant"
+    timeout: 10000

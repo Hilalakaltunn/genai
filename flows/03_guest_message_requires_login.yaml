@@ -1,0 +1,20 @@
+# W-01: main flow up to the login gate – a guest types a prompt, sends it,
+# and is asked to log in instead of getting an answer
+url: https://chatbotai.com
+name: 03 Guest message opens login
+tags:
+  - main-flow
+  - auth
+---
+- runFlow: ../common/open_home.yaml
+- tapOn:
+    id: "chat-input-textarea"
+- inputText: "What is the capital of France? Answer in one word."
+- tapOn:
+    id: "chat-input-send-button"
+- extendedWaitUntil:
+    visible:
+      id: "google-sign-in-button"
+    timeout: 10000
+- assertVisible: "No chat history"
+- takeScreenshot: screenshots/03_login_gate

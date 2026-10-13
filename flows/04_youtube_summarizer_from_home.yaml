@@ -1,0 +1,13 @@
+# Navigation: YouTube Summarizer opens from the home page tool row
+url: https://chatbotai.com
+name: 04 Open YouTube Summarizer
+tags:
+  - navigation
+---
+- runFlow: ../common/open_home.yaml
+- tapOn:
+    id: "feature-tool-button-youtube-summarizer"
+- extendedWaitUntil:
+    visible: "(?i).*youtube.*"
+    timeout: 15000
+- takeScreenshot: screenshots/04_youtube_summarizer

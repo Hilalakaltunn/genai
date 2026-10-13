@@ -1,0 +1,8 @@
+# Helper (not part of the suite): opens the login dialog and fails on
+# purpose so Maestro saves its hierarchy for inspection.
+url: https://chatbotai.com
+---
+- runFlow: ../common/open_home.yaml
+- tapOn:
+    id: "chat-header-login-button"
+- assertVisible: "__probe_dump_hierarchy__"

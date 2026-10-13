@@ -1,0 +1,10 @@
+# Helper (not part of the suite): fails on purpose so Maestro saves the
+# page hierarchy and a screenshot to ~/.maestro/tests/<run>/ for inspection.
+url: https://chatbotai.com
+---
+- launchApp
+- extendedWaitUntil:
+    visible: ".*Welcome to chatbotai.com.*"
+    timeout: 15000
+- runFlow: ../common/accept_cookies.yaml
+- assertVisible: "__probe_dump_hierarchy__"

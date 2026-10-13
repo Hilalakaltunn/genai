@@ -1,0 +1,10 @@
+# Reusable step: open the home page, wait until the chat input is ready
+# and accept the cookie banner (every run starts with a clean browser).
+url: https://chatbotai.com
+---
+- launchApp
+- extendedWaitUntil:
+    visible:
+      id: "chat-input-textarea"
+    timeout: 20000
+- runFlow: accept_cookies.yaml

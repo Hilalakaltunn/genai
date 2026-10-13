@@ -1,0 +1,17 @@
+# Smoke: home page loads with chat input, model selector, tools and Login
+url: https://chatbotai.com
+name: 01 Home page loads
+tags:
+  - smoke
+---
+- runFlow: ../common/open_home.yaml
+- assertVisible: "Welcome to chatbotai.com - your personal AI assistant"
+- assertVisible:
+    id: "chat-input-textarea"
+- assertVisible:
+    id: "model-select-trigger"
+- assertVisible:
+    id: "chat-header-login-button"
+- assertVisible:
+    id: "feature-tool-button-youtube-summarizer"
+- takeScreenshot: screenshots/01_home

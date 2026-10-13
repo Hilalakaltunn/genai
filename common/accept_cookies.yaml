@@ -1,0 +1,10 @@
+# Reusable step: close the cookie banner if Maestro can see it.
+# The banner does not block the elements the tests check, so the
+# test continues either way.
+url: https://chatbotai.com
+---
+- runFlow:
+    when:
+      visible: "(?i).*accept all.*"
+    commands:
+      - tapOn: "(?i).*accept all.*"

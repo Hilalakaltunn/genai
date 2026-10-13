@@ -1,0 +1,23 @@
+# W-02: Login dialog offers Google, Facebook, Apple, Microsoft and e-mail
+url: https://chatbotai.com
+name: 05 Login options are shown
+tags:
+  - auth
+---
+- runFlow: ../common/open_home.yaml
+- tapOn:
+    id: "chat-header-login-button"
+- extendedWaitUntil:
+    visible:
+      id: "google-sign-in-button"
+    timeout: 10000
+- assertVisible: "Continue with Google"
+- assertVisible:
+    id: "facebook-sign-in-button"
+- assertVisible:
+    id: "apple-sign-in-button"
+- assertVisible:
+    id: "microsoft-sign-in-button"
+- assertVisible:
+    id: "login-page-email-input"
+- takeScreenshot: screenshots/05_login_options

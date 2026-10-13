@@ -1,0 +1,17 @@
+# Navigation: AI tool pages load directly by URL
+url: https://chatbotai.com
+name: 07 Tool pages open by URL
+tags:
+  - navigation
+---
+- openLink: https://chatbotai.com/ai-tools/chat-pdf
+- extendedWaitUntil:
+    visible: "(?i).*pdf.*"
+    timeout: 20000
+- runFlow: ../common/accept_cookies.yaml
+- takeScreenshot: screenshots/07a_chat_pdf
+- openLink: https://chatbotai.com/ai-tools/math-solver
+- extendedWaitUntil:
+    visible: "(?i).*math.*"
+    timeout: 20000
+- takeScreenshot: screenshots/07b_math_solver
